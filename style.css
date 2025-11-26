@@ -1,3 +1,6 @@
+/* ======================================= */
+/* ESTILOS GERAIS */
+/* ======================================= */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif; 
     background: #F8F8F8; 
@@ -27,40 +30,37 @@ section {
     padding: 20px 0;
 }
 
-.foto-principal {
-    max-width: 300px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+/* A foto-principal antiga foi removida, se precisar de uma imagem centralizada acima do grid, você pode usar uma classe específica. */
+/* .foto-principal { ... } */
+
+/* ======================================= */
+/* LAYOUT DE DETALHES COM IMAGEM E TEXTO LADO A LADO */
+/* ======================================= */
+.premios-detalhes-layout {
+    display: flex; /* Habilita o Flexbox */
+    flex-direction: column; /* Padrão: Imagem acima do texto em telas pequenas */
+    align-items: center; /* Centraliza verticalmente quando em coluna */
+    gap: 20px; /* Espaço entre a imagem e o texto */
+    margin: 20px 0;
 }
 
-.premios-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.foto-detalhes-layout {
+    max-width: 100%; /* Ajusta para não estourar o contêiner */
+    width: 350px; /* Largura da imagem, similar ao seu exemplo */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .premio {
     background: white;
     padding: 15px;
     border-radius: 10px;
-    /* AJUSTE: AUMENTA a largura para não ficar estreito */
-    width: 90%; 
-    max-width: 450px; 
-    /* AJUSTE: Alinha o texto do item do kit à esquerda para melhor leitura */
+    /* Ajustes para o layout lado a lado */
+    width: 100%; /* Ocupa 100% do espaço disponível no flex item */
+    max-width: 450px; /* Limita a largura do quadro de texto */
     text-align: left; 
     box-shadow: 0 0 8px rgba(179, 57, 57, 0.2); 
-}
-
-.foto-premio {
-    /* AJUSTE: Reduz a largura máxima da imagem dentro do quadro */
-    max-width: 150px; 
-    height: auto; /* Mantém a proporção */
-    display: block; /* Garante que ela se centralize */
-    margin: 10px auto; /* Centraliza a imagem */
-    border-radius: 6px;
 }
 
 .qr-code {
@@ -69,8 +69,10 @@ section {
     margin: 20px auto;
 }
 
+/* ======================================= */
+/* GRADE DE NÚMEROS */
+/* ======================================= */
 #grid-rifa {
-    /* AJUSTE: 6 COLUNAS, ideal para 30 números */
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
     gap: 5px;
@@ -83,7 +85,6 @@ section {
     text-align: center;
     border-radius: 6px;
     cursor: pointer;
-    /* NOVA BORDA */
     border: 1px solid #C5AA8E; 
     transition: 0.2s;
 }
@@ -94,7 +95,6 @@ section {
 }
 
 .numero-selecionado {
-    /* NOVA COR: Laranja Queimado (Fogo/Queijo) */
     background: #FF9933; 
     color: white;
 }
@@ -105,12 +105,14 @@ section {
     cursor: not-allowed;
 }
 
+/* ======================================= */
+/* BOTÃO WHATSAPP (ENVIAR SELEÇÃO) */
+/* ======================================= */
 #btn-whatsapp {
     margin-top: 15px;
     width: 100%;
     padding: 15px;
     border: none;
-    /* NOVA COR */
     background: #B33939; 
     color: white;
     border-radius: 8px;
@@ -123,6 +125,9 @@ section {
     cursor: not-allowed;
 }
 
+/* ======================================= */
+/* BOTÕES WHATSAPP DOS CONTATOS */
+/* ======================================= */
 .whatsapp-contatos {
     text-align: center;
     margin-top: 15px;
@@ -150,47 +155,65 @@ section {
     transform: scale(1.03);
 }
 
-@media (max-width: 768px) {
+/* ======================================= */
+/* RESPONSIVIDADE */
+/* ======================================= */
+@media (min-width: 769px) { /* A PARTIR DE TABLETS, ATIVA O LAYOUT LADO A LADO */
+    .premios-detalhes-layout {
+        flex-direction: row; /* Imagem e texto lado a lado */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: flex-start; /* Alinha o topo dos elementos */
+    }
+
+    .foto-detalhes-layout {
+        width: 40%; /* Imagem ocupa 40% do espaço disponível */
+        max-width: 400px;
+    }
+
+    .premio {
+        width: 50%; /* Quadro de texto ocupa 50% do espaço disponível */
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 768px) { /* Para telas de tablets e celulares */
 
     main {
         width: 95%;
     }
 
     #grid-rifa {
-        /* AJUSTE: 4 colunas em telas menores */
         grid-template-columns: repeat(4, 1fr);
         gap: 8px;
     }
 
-    .premios-container {
-        flex-direction: column;
-        align-items: center;
-    }
+    /* .premios-container e .premio já se ajustam com flex-direction: column e width: 100% no padrão */
 
-    .premio {
-        width: 90%; /* Mantém o quadro amplo no celular */
-        max-width: 350px;
+    .foto-detalhes-layout {
+        max-width: 280px; /* Reduz a imagem em telas menores */
     }
-
-    .foto-principal, .qr-code {
+    
+    .qr-code {
         max-width: 250px;
     }
 
-    .whatsapp-btn {
-        padding: 10px 18px;
-        font-size: 15px;
+    #btn-whatsapp {
+        font-size: 14px; 
+        padding: 12px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* Para telas de celular muito pequenas */
     #grid-rifa {
-        /* AJUSTE: 3 colunas em telas muito pequenas */
         grid-template-columns: repeat(3, 1fr);
         gap: 6px;
     }
 
-    .foto-principal, .qr-code {
-        max-width: 200px;
+    .foto-detalhes-layout {
+        max-width: 220px; /* Mais redução para celular pequeno */
     }
 
+    .qr-code {
+        max-width: 200px;
+    }
 }
