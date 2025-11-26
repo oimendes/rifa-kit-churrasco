@@ -10,7 +10,7 @@ Este é o código-fonte de uma página web responsiva e dinâmica criada para a 
 A principal característica do projeto é a integração com o Google Sheets, que permite a atualização em tempo real dos números vendidos, garantindo que o comprador veja apenas o que está disponível.
 
 ## 🔗 Link do Site
-Acesse o site: [oimendes.github.io/rifa-kit-churrasco/](https://oimendes.github.io/rifa-kit-churrasco/) *(Baseado no URL de teste)*
+Acesse o site: [oimendes.github.io/rifa-kit-churrasco/](https://oimendes.github.io/rifa-kit-churrasco/)
 
 ## ✨ Funcionalidades
 
@@ -36,7 +36,7 @@ Para reutilizar este projeto, você precisará apenas de três ajustes principai
 
 ### 1. Ajuste da API (Google Sheets)
 
-O código usa um URL de API gerado via Google Apps Script (que você já configurou) para buscar os números vendidos. Se você mudar a planilha ou o Apps Script, atualize o link na linha 19 do arquivo `script.js`:
+O código usa um URL de API gerado via Google Apps Script para buscar os números vendidos. Se você mudar a planilha ou o Apps Script, atualize o link na linha 19 do arquivo `script.js`:
 
 ```javascript
 // script.js (Linha 19)
