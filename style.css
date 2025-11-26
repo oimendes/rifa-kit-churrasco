@@ -1,5 +1,5 @@
 /* =============================== */
-/* ESTILO GERAL - TEMA CHURRASCO   */
+/* ESTILO PREMIUM - CHURRASCO      */
 /* =============================== */
 
 body {
@@ -7,89 +7,226 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background: #f4f4f4;
+    background: linear-gradient(180deg, #2b2b2b 0%, #1a1a1a 100%);
+    background-attachment: fixed;
 }
+
+/* =============================== */
+/* HEADER COM GRADIENTE           */
+/* =============================== */
 
 header {
     text-align: center;
-    padding: 25px 10px;
-    background: #b40000; /* vermelho churrasco */
+    padding: 35px 15px;
+    background: linear-gradient(135deg, #b40000, #660000);
     color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
 
 header h1 {
     margin: 0;
-    font-size: 26px;
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 
 header p {
-    margin: 5px 0;
-    font-size: 16px;
+    margin: 6px 0;
+    font-size: 17px;
 }
+
+/* =============================== */
+/* MAIN                            */
+/* =============================== */
 
 main {
     width: 90%;
     max-width: 900px;
-    margin: 25px auto;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
 }
 
 /* =============================== */
-/* SEÇÕES                         */
+/* TÍTULOS                         */
 /* =============================== */
-
-section {
-    margin-bottom: 35px;
-}
 
 h2 {
-    color: #b40000;
     text-align: center;
+    color: #ff4d4d;
+    text-shadow: 1px 1px 3px black;
 }
 
 /* =============================== */
-/* PREMIAÇÃO E LAYOUT            */
+/* IMAGEM DO KIT                   */
 /* =============================== */
-
-.premios-detalhes-layout {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
 
 .foto-detalhes-layout {
     width: 260px;
-    border-radius: 10px;
-    border: 3px solid #b40000;
-    box-shadow: 0 0 10px rgba(180, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 3px solid #ff4d4d;
+    box-shadow: 0 0 20px rgba(255,50,50,0.4);
+    filter: brightness(1.05);
 }
 
+/* =============================== */
+/* LISTA DE DETALHES DO KIT       */
+/* =============================== */
+
 .premio ul {
-    background: white;
+    background: rgba(255,255,255,0.12);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    border-left: 5px solid #b40000;
+    border-radius: 12px;
+    color: white;
+    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.2),
+                0 0 10px rgba(0,0,0,0.4);
+    border-left: 5px solid #ff4d4d;
 }
 
 .premio li {
-    margin: 10px 0;
-    line-height: 1.4;
+    margin: 12px 0;
+    line-height: 1.5;
 }
 
+/* Observação do kit */
 .nota-kit {
-    background: #fff5f5;
-    border-left: 4px solid #b40000;
-    padding: 10px;
-    margin-top: 15px;
+    background: rgba(255, 0, 0, 0.15);
+    padding: 12px;
     border-radius: 6px;
+    border-left: 4px solid #ff4d4d;
+    color: #ffecec;
 }
 
 /* =============================== */
-/* REGRAS                         */
+/* REGRAS                          */
 /* =============================== */
 
 .regras-simples ul {
-    background: #fff;
+    background: rgba(255,255,255,0.1);
     padding: 18px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+    border-left: 4px solid #ff4d4d;
+}
+
+.regras-simples li {
+    margin: 8px 0;
+}
+
+/* =============================== */
+/* BOTÃO WHATSAPP                 */
+/* =============================== */
+
+#btn-whatsapp {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff4d4d, #b40000);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+    margin-top: 20px;
+    transition: 0.25s ease-in-out;
+}
+
+#btn-whatsapp:hover:not(:disabled) {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(255, 80, 80, 0.7);
+}
+
+#btn-whatsapp:disabled {
+    background: #777;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* =============================== */
+/* GRID DE NÚMEROS                */
+/* =============================== */
+
+#grid-rifa {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+#grid-rifa div {
+    padding: 12px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.numero-disponivel:hover {
+    background: rgba(255,80,80,0.35);
+    border-color: #ff4d4d;
+    transform: scale(1.05);
+}
+
+.numero-selecionado {
+    background: linear-gradient(145deg, #ff4d4d, #b40000);
+    border-color: #ff8080;
+    box-shadow: 0 0 12px rgba(255,70,70,0.8);
+}
+
+.numero-vendido, 
+.numero-indisponivel {
+    background: #444;
+    border-color: #222;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+/* =============================== */
+/* FOOTER                         */
+/* =============================== */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    color: #ff4d4d;
+    margin-top: 40px;
+    border-top: 2px solid #ff4d4d;
+    font-weight: bold;
+}
+
+/* =============================== */
+/* RESPONSIVIDADE                */
+/* =============================== */
+
+@media (max-width: 768px) {
+    #grid-rifa {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .foto-detalhes-layout {
+        width: 220px;
+    }
+
+    .premios-detalhes-layout {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    #grid-rifa {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .foto-detalhes-layout {
+        width: 180px;
+    }
+}
