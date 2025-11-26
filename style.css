@@ -22,15 +22,15 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Grade dos números */
-#numeros-container {
+/* Grade da rifa */
+#grid-rifa {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
 }
 
-/* Cada número disponível */
-#numeros-container div {
+/* Cada número */
+#grid-rifa div {
     background: #222;
     padding: 12px;
     border-radius: 8px;
@@ -42,16 +42,14 @@ h1 {
     font-size: 18px;
 }
 
-/* Hover apenas nos disponíveis */
-#numeros-container div:not(.taken):hover {
+/* Hover somente nos disponíveis */
+#grid-rifa div:not(.taken):hover {
     transform: scale(1.05);
     background: #d43838;
     color: #fff;
 }
 
-/* ----------------------------------- */
-/*     ESTILO DOS NÚMEROS COMPRADOS    */
-/* ----------------------------------- */
+/* Número vendido */
 .taken {
     background: #444 !important;
     color: #bbb !important;
@@ -62,10 +60,17 @@ h1 {
     text-decoration-thickness: 3px;
 }
 
-/* Remover hover dos vendidos */
+/* Remover animação */
 .taken:hover {
     background: #444 !important;
     transform: none !important;
+}
+
+/* Número selecionado */
+.numero-selecionado {
+    background: #ff4c4c !important;
+    color: white !important;
+    border-color: #ff7777 !important;
 }
 
 /* Botões */
@@ -86,7 +91,7 @@ button:hover {
     background: #d43838;
 }
 
-/* Lista de números selecionados */
+/* Lista */
 #selecionados-list {
     margin-top: 15px;
     padding: 10px;
