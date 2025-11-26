@@ -41,7 +41,7 @@ function gerarGrade() {
         numeroDiv.innerText = i.toString().padStart(2, "0");
 
         if (NUMEROS_VENDIDOS.includes(i)) {
-            numeroDiv.classList.add("numero-vendido");
+            numeroDiv.classList.add("taken");
 
         } else {
             numeroDiv.classList.add("numero-disponivel");
@@ -114,3 +114,4 @@ document.addEventListener("DOMContentLoaded", () => {
     carregarVendidos();
     btnWhatsapp.addEventListener("click", gerarMensagemWhatsapp);
 });
+
