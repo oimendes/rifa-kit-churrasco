@@ -138,3 +138,29 @@ h2 {
         width: 220px;
     }
 }
+/* Números já comprados */
+.number.taken {
+    background: #444;      /* cinza escuro */
+    color: #bbb;           /* texto mais claro */
+    cursor: not-allowed;   /* ícone de proibido */
+    border-color: #555;
+    opacity: 0.6;
+}
+
+/* Remover hover dos números comprados */
+.number.taken:hover {
+    background: #444;
+    transform: none;
+}
+
+/* Para selecionar normalmente (não-taken) */
+.number {
+    transition: 0.2s ease;
+}
+
+.number:hover:not(.taken) {
+    transform: scale(1.05);
+    background: #ca3434;
+    color: #fff;
+}
+
