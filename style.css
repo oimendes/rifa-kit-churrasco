@@ -1,166 +1,96 @@
-/* ======================================= */
-/* ESTILOS GERAIS */
-/* ======================================= */
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
-    background: #2a2a2a; /* fundo escuro moderno */
-    margin: 0;
-    padding: 0;
-    color: #f0f0f0; /* texto claro e visível */
-}
-
-/* ======================================= */
-/* HEADER */
-/* ======================================= */
-header {
-    text-align: center;
-    padding: 25px;
-    background: linear-gradient(90deg, #b80000, #8b0000);
-    color: white;
-    box-shadow: 0 0 12px rgba(0,0,0,0.5);
-}
-
-header h1 {
-    margin-bottom: 5px;
-}
-
-main {
-    width: 90%;
-    max-width: 900px;
-    margin: 25px auto;
-}
-
-/* ======================================= */
-/* SEÇÕES E CARTÕES INTERNOS */
-/* ======================================= */
-section {
-    background: rgba(255, 255, 255, 0.06);
+    background: #111;
     padding: 20px;
-    border-radius: 14px;
-    margin-bottom: 25px;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 0 12px rgba(0,0,0,0.4);
-}
-
-h2 {
-    color: #ff4b4b;
-    text-align: center;
-}
-
-/* ======================================= */
-/* IMAGEM DO KIT */
-/* ======================================= */
-.premios-detalhes-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; /* 🔥 centraliza tudo */
-    align-items: center;
-}
-
-.foto-detalhes-layout {
-    width: 260px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 80, 80, 0.6);
-}
-
-/* ======================================= */
-/* LISTA DO KIT */
-.premio ul li {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #fff;
-}
-
-/* ======================================= */
-/* BOTÃO WHATSAPP */
-#btn-whatsapp {
-    margin-top: 15px;
-    width: 100%;
-    padding: 15px;
-    border: none;
-    background: #25D366;
+    margin: 0;
     color: white;
-    font-size: 18px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-#btn-whatsapp:disabled {
-    background: #6d6d6d;
-    cursor: not-allowed;
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
 }
 
-/* ======================================= */
-/* GRADE RIFA */
-#grid-rifa {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
-}
-
-#grid-rifa div {
-    padding: 10px;
-    background: #ffffff10;
+h1 {
     text-align: center;
+    color: #ff4c4c;
+    margin-bottom: 20px;
+}
+
+/* Grade dos números */
+#numeros-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+}
+
+/* Cada número disponível */
+#numeros-container div {
+    background: #222;
+    padding: 12px;
     border-radius: 8px;
+    text-align: center;
     cursor: pointer;
     transition: 0.2s;
-    border: 1px solid #ff4b4b55;
+    border: 2px solid #333;
     font-weight: bold;
+    font-size: 18px;
 }
 
-.numero-disponivel:hover {
-    background: #ff4b4b55;
-}
-
-.numero-selecionado {
-    background: #ff4b4b;
-    color: white;
-}
-
-.numero-vendido {
-    background: #4caf50;
-    color: white;
-    cursor: not-allowed;
-}
-
-/* ======================================= */
-/* RESPONSIVIDADE */
-@media (max-width: 600px) {
-    #grid-rifa {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .foto-detalhes-layout {
-        width: 220px;
-    }
-}
-/* Números já comprados */
-.number.taken {
-    background: #444;      /* cinza escuro */
-    color: #bbb;           /* texto mais claro */
-    cursor: not-allowed;   /* ícone de proibido */
-    border-color: #555;
-    opacity: 0.6;
-}
-
-/* Remover hover dos números comprados */
-.number.taken:hover {
-    background: #444;
-    transform: none;
-}
-
-/* Para selecionar normalmente (não-taken) */
-.number {
-    transition: 0.2s ease;
-}
-
-.number:hover:not(.taken) {
+/* Hover apenas nos disponíveis */
+#numeros-container div:not(.taken):hover {
     transform: scale(1.05);
-    background: #ca3434;
+    background: #d43838;
     color: #fff;
 }
 
+/* ----------------------------------- */
+/*     ESTILO DOS NÚMEROS COMPRADOS    */
+/* ----------------------------------- */
+.taken {
+    background: #444 !important;
+    color: #bbb !important;
+    cursor: not-allowed !important;
+    border: 2px solid #555 !important;
+    opacity: 0.6 !important;
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+}
+
+/* Remover animação/hover do vendido */
+.taken:hover {
+    background: #444 !important;
+    transform: none !important;
+}
+
+/* Botões */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4c4c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #d43838;
+}
+
+/* Lista de números selecionados */
+#selecionados-list {
+    margin-top: 15px;
+    padding: 10px;
+    background: #111;
+    border-radius: 6px;
+    border: 1px solid #333;
+}
