@@ -48,15 +48,18 @@ section {
     border-radius: 10px;
     /* AJUSTE: AUMENTA a largura para não ficar estreito */
     width: 90%; 
-    max-width: 400px; 
+    max-width: 450px; 
     /* AJUSTE: Alinha o texto do item do kit à esquerda para melhor leitura */
     text-align: left; 
     box-shadow: 0 0 8px rgba(179, 57, 57, 0.2); 
 }
 
 .foto-premio {
-    /* Não será mais usada, mas mantemos a regra */
-    max-width: 180px;
+    /* AJUSTE: Reduz a largura máxima da imagem dentro do quadro */
+    max-width: 150px; 
+    height: auto; /* Mantém a proporção */
+    display: block; /* Garante que ela se centralize */
+    margin: 10px auto; /* Centraliza a imagem */
     border-radius: 6px;
 }
 
@@ -189,4 +192,5 @@ section {
     .foto-principal, .qr-code {
         max-width: 200px;
     }
+
 }
