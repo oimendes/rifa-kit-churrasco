@@ -62,7 +62,7 @@ h1 {
     text-decoration-thickness: 3px;
 }
 
-/* Remover animação/hover do vendido */
+/* Remover hover dos vendidos */
 .taken:hover {
     background: #444 !important;
     transform: none !important;
